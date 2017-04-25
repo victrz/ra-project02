@@ -10,9 +10,11 @@
 
 </head>
 <body>
-    <header>
-      <img src="nyt-logo.svg">
-       <select name="categories" id="category">
+     <header class="flex flex-col padding">
+      <img src="nyt-logo.svg" class="flex padding">
+      <p class="text-align-center flex-align-baseline">Choose a section:</p>
+      <div class="flex flex-just-center padding">
+        <select name="categories" id="category">
          <option value="home">home</option>
          <option value="opinion">opinion</option>
          <option value="world">world</option>
@@ -38,11 +40,12 @@
          <option value="realeastate">real estate</option>
          <option value="automobiles">automobiles</option>
          <option value="insider">insider</option>
-       </select>
+        </select>
+      </div>
      </header>
-    <div id="clone">
-      <div class="article-wrap">
-        <a><p></p></a>
+    <div id="clone" class="flex flex-col">
+      <div class="article-wrap flex flex-col">
+        <a class="flex"><p></p></a>
       </div>
     </div>
 </body>
