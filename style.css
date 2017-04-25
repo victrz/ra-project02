@@ -1,0 +1,21 @@
+p{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: auto;
+  line-height: 2em;
+}
+
+
+.article-wrap{
+  height:70vh;
+  width: 100%;
+  background-position: center;
+}
+
+header{
+  height: 30vh;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
