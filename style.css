@@ -36,6 +36,7 @@
 
 p{
   color: white;
+  font-size: 2em;
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: auto;
@@ -47,9 +48,8 @@ a{
 
 
 .article-wrap{
-  height:70vh;
-  width: 100%;
-  background-position: center;
+  height: 70vh;
+
 }
 
 header{
