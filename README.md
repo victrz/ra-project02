@@ -15,3 +15,9 @@ tuesday, april 26 2017
 -started styling clone article divs
 -started work on drop down menu
 need to: create landing page, transition, style, media query
+
+wednesday, april 27 2017
+-made header shrink on selection from main load full screen
+-created .SCSS, min.style.css
+-created loading animation
+-need to style with SASS, @media queries

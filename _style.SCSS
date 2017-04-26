@@ -1,9 +1,18 @@
+$font-footer-grey = #c2c2c2;
+$
+$
+$
+$
+
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-
+body{
+  background-color: black;
+}
 @font-face {
     font-family: "OpenSans-Bold";
     src: url("fonts/OpenSans-Bold.ttf") format("truetype");
@@ -80,7 +89,19 @@ a{
 
 .article-wrap{
   height: 70vh;
+}
 
+.load{
+  position: fixed;
+  z-index: 2000;
+  background-image: url("ajax-loader.gif");
+  background-size: 20%;
+  background-position: center center;
+  background-repeat: no-repeat no-repeat;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(52,44,44,0.8);
+  display: none;
 }
 
 header{
@@ -89,11 +110,19 @@ header{
 }
 .header-large{
   height:80vh;
+  justify-content: center;
 }
 .header-small{
   height: auto;
 }
+
 footer{
+
+    $background-black
+
+    p{font-family: $body-font;
+    color: $font-footer-grey}
+
   height: 20vh;
   background-color: black;
   color: white;
@@ -109,6 +138,7 @@ footer{
 
 #clone{
   display: none;
+  background-color: black;
 }
 #articleSection{
   background-color: black;

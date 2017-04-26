@@ -3,17 +3,18 @@
 <head>
     <title>NY Times</title>
     <meta charset="utf-8"/>
-    <link href="reset.css" type="text/css" rel="stylesheet">
-    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="_style.scss" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="java.js" type="text/javascript"></script>
 
 </head>
 <body>
-     <header class="flex flex-col padding">
-      <img src="nyt-logo.svg" class="flex padding">
-      <p class="text-align-center flex-align-baseline">Choose a section:</p>
-      <div class="flex flex-just-center padding">
+  <div class="load"></div>
+     <header class="header-large flex flex-col padding-30">
+      <img src="nyt-logo.svg" class="flex padding-20">
+      <p class="text-align-center flex-align-baseline font-body">Choose a section:</p>
+      <div class="flex flex-just-center padding font-body padding-20">
         <select name="categories" id="category">
          <option value="home">home</option>
          <option value="opinion">opinion</option>
@@ -43,13 +44,14 @@
         </select>
       </div>
      </header>
+
      <div id="clone" class="flex">
        <div class="article-wrap flex flex-col">
-         <a class="flex"><p></p></a>
+         <a class="flex font-body"><p class="padding-20"></p></a>
        </div>
      </div>
      <section id="articlesSection">
     </section>
 </body>
-<footer></footer>
+<footer> <p class="font-body text-transform text-align-center font-grey">copyright 2016 instanews</p></footer>
 </html>
