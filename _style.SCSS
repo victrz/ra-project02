@@ -1,9 +1,8 @@
-$font-footer-grey = #c2c2c2;
-$
-$
-$
-$
-
+$font-footer-color: #c2c2c2;
+$font-body-color: white;
+$font-header-color:white;
+$font-body: "OpenSans-Light";
+$background-color: black;
 
 * {
   box-sizing: border-box;
@@ -11,39 +10,32 @@ $
   margin: 0;
 }
 body{
-  background-color: black;
+  background-color: $background-color;
 }
-@font-face {
-    font-family: "OpenSans-Bold";
-    src: url("fonts/OpenSans-Bold.ttf") format("truetype");
-    font-weight: bold;
-}
-@font-face {
-    font-family: "OpenSans-BoldItalic";
-    src: url("fonts/OpenSans-BoldItalic.ttf") format("truetype");
-    font-weight: bold;
-    font-style: italic;
-}
+// @font-face {
+//     font-family: "OpenSans-Bold";
+//     src: url("..fonts/OpenSans-Bold.ttf") format("truetype");
+//     font-weight: bold;
+// }
+// @font-face {
+//     font-family: "OpenSans-BoldItalic";
+//     src: url("..fonts/OpenSans-BoldItalic.ttf") format("truetype");
+//     font-weight: bold;
+//     font-style: italic;
+// }
 @font-face {
     font-family: "OpenSans-Light";
-    src: url("fonts/OpenSans-Light.ttf") format("truetype");
+    src: url("../fonts/OpenSans-Light.ttf") format("truetype");
     font-weight: lighter;
   }
-@font-face {
-    font-family: "OpenSans-LightItalic";
-    src: url("fonts/OpenSans-LightItalic.ttf") format("truetype");
-    font-weight: lighter;
-    font-style: italic;
-}
-.font-body{
-  font-family: "OpenSans-Light";
-}
-.text-transform{
-  text-transform: uppercase;
-}
-.font-grey{
-  color: #c2c2c2;
-}
+// @font-face {
+//     font-family: "OpenSans-LightItalic";
+//     src: url("..fonts/OpenSans-LightItalic.ttf") format("truetype");
+//     font-weight: lighter;
+//     font-style: italic;
+// }
+
+
 .flex{
   display: flex;
 }
@@ -62,11 +54,12 @@ body{
 .flex-align-center{
   align-content: center;
 }
-
-.flex-align-baseline{
-  align-items: baseline;
+.flex-align-self-end{
+  align-self: flex-end;
 }
-
+.flex-align-end{
+  align-items: flex-end;
+}
 .flex-grow{
   flex-grow:1;
 }
@@ -74,27 +67,28 @@ body{
   text-align: center;
 }
 
-p{
-  color: white;
-  font-size: 2em;
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: auto;
-  line-height: 2em;
-}
-a{
-  text-decoration: none;
-}
-
-
 .article-wrap{
-  height: 70vh;
+    p{
+      color: $font-body-color;
+      font-family: $font-body;
+      font-size: 1.1em;
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      //height: auto;
+      //background-size: cover;
+      // background-position: center;
+      //line-height: 2em;
+    }
+    a{
+      text-decoration: none;
+      color: $font-body-color;
+      font-family: $font-body;
+    }
 }
-
 .load{
   position: fixed;
   z-index: 2000;
-  background-image: url("ajax-loader.gif");
+  background-image: url("../ajax-loader.gif");
   background-size: 20%;
   background-position: center center;
   background-repeat: no-repeat no-repeat;
@@ -103,10 +97,12 @@ a{
   background-color: rgba(52,44,44,0.8);
   display: none;
 }
-
 header{
-  background-color: black;
-  color: white;
+  background-color: $background-color;
+    p{
+      font-family: $font-body;
+      color: $font-header-color;
+    }
 }
 .header-large{
   height:80vh;
@@ -115,31 +111,115 @@ header{
 .header-small{
   height: auto;
 }
-
 footer{
-
-    $background-black
-
-    p{font-family: $body-font;
-    color: $font-footer-grey}
-
-  height: 20vh;
-  background-color: black;
-  color: white;
+    background-color: $background-color;
+    height: 20vh;
+      p{
+        font-family: $font-body;
+        font-size: 1.8em;
+        color: $font-footer-color;
+        // margin: auto;
+      }
 }
-
 .padding-20{
   padding: 20px;
 }
 .padding-30{
   padding: 30px;
 }
-
-
 #clone{
   display: none;
-  background-color: black;
+  background-color: $background-color;
+    p{
+      color: $font-body-color;
+      font-family: $font-body;
+      font-size: 2em;
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: auto;
+      line-height: 2em;
+    }
+    a{
+      text-decoration: none;
+      color: $font-body-color;
+      font-family: $font-body;
+    }
 }
 #articleSection{
-  background-color: black;
+  background-color: $background-color;
+}
+
+@media only screen and (max-device-width: 600px){
+  .flex-col-mobile{
+    flex-direction: column;
+  }
+  .text-align-center-mobile{
+    text-align: center;
+  }
+  .article-height-mobile{
+    height: 60vh;
+  }
+  .article-width-mobile{
+    width: 100%;
+  }
+
+
+}
+
+@media only screen and (min-device-width: 600px){
+  .flex-row-tablet{
+    flex-direction: row;
+  }
+  .flex-just-start-tablet{
+    justify-content: flex-start;
+  }
+
+  .flex-grow-tablet{
+    flex-grow: 1;
+  }
+  .flex-just-center-tablet{
+    justify-content: center;
+  }
+  .flex-wrap-tablet{
+    flex-wrap: wrap;
+  }
+  .article-width-tablet{
+    width: 33.33%
+  }
+  .article-height-tablet{
+    height: 40vh;
+  }
+  .article-bg-size-tablet{
+    background-size: 25%;
+  }
+}
+
+@media only screen and (min-device-width: 1240px){
+  .flex-row-desktop{
+    flex-direction: row;
+  }
+  .flex-just-start-desktop{
+    justify-content: flex-start;
+  }
+  .flex-just-center-desktop{
+    justify-content: flex-start;
+  }
+  .flex-grow{
+    flex-grow: 1;
+  }
+  .flex-just-center-desktop{
+    justify-content: center;
+  }
+  .flex-wrap-desktop{
+    flex-wrap: wrap;
+  }
+  .article-width-desktop{
+    width: 25%
+  }
+  .article-height-desktop{
+    height: 50vh;
+  }
+  .article-bg-size-desktop{
+    background-size: 20%;
+  }
 }

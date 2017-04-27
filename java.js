@@ -8,7 +8,7 @@ $(document).ready(function(){
 
   $('#category').on('change', function(){
 
-            $(".load").show();
+            $(".load").fadeIn(1000);
 
             $("header").addClass( "header-small");
 
@@ -23,7 +23,7 @@ $(document).ready(function(){
               $("#articlesSection").empty();
               loop_articles(result.results);
               console.log(result);
-              $(".load").hide();
+              $(".load").fadeOut(1000);
             }).fail(function(err) {
               throw err;
             });
@@ -33,7 +33,7 @@ $(document).ready(function(){
 });
 function newArticle(abstract, image, link){
           var articleClone = $("#clone").clone();
-          $(articleClone).children(".article-wrap").css("background", "url('"+image+"') 50%");
+          $(articleClone).children(".article-wrap").css({"background": "url('"+image+"')", "background-size": "cover", "background-position": "center"});
           $(articleClone).find("p").text(abstract);
           $(articleClone).find("a").attr("href", link);
           $("#articlesSection").append($(articleClone).html());

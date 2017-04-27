@@ -3,7 +3,7 @@
 <head>
     <title>NY Times</title>
     <meta charset="utf-8"/>
-    <link href="_style.scss" type="text/css" rel="stylesheet">
+    <link href="dist/min.style.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="java.js" type="text/javascript"></script>
@@ -11,47 +11,51 @@
 </head>
 <body>
   <div class="load"></div>
-     <header class="header-large flex flex-col padding-30">
-      <img src="nyt-logo.svg" class="flex padding-20">
-      <p class="text-align-center flex-align-baseline font-body">Choose a section:</p>
-      <div class="flex flex-just-center padding font-body padding-20">
-        <select name="categories" id="category">
-         <option value="home">home</option>
-         <option value="opinion">opinion</option>
-         <option value="world">world</option>
-         <option value="national">national</option>
-         <option value="politics">politics</option>
-         <option value="upshot">upshot</option>
-         <option value="nyregion">NY region</option>
-         <option value="business">business</option>
-         <option value="technology">technology</option>
-         <option value="science">science</option>
-         <option value="health">health</option>
-         <option value="sports">sports</option>
-         <option value="arts">arts</option>
-         <option value="books">books</option>
-         <option value="movies">movies</option>
-         <option value="theater">theater</option>
-         <option value="sundayreview">sunday review</option>
-         <option value="fashion">fashion</option>
-         <option value="tmagazine">t magazine</option>
-         <option value="food">food</option>
-         <option value="travel">travel</option>
-         <option value="magazine">magazine</option>
-         <option value="realestate">real estate</option>
-         <option value="automobiles">automobiles</option>
-         <option value="insider">insider</option>
-        </select>
+     <header class="header-large flex flex-col-mobile flex-row-tablet flex-row-desktop padding-30 flex-just-start-desktop" >
+      <img src="nyt-logo.svg" class="flex padding-20 flex-grow-tablet">
+      <div class="flex flex-col flex-grow-tablet flex-grow-desktop flex-just-center-desktop flex-just-center-tablet">
+            <p class="text-align-center-mobile padding-20" >Choose a section:</p>
+            <div class="flex padding font-body padding-20 ">
+              <select name="categories" id="category">
+               <option value="home">home</option>
+               <option value="opinion">opinion</option>
+               <option value="world">world</option>
+               <option value="national">national</option>
+               <option value="politics">politics</option>
+               <option value="upshot">upshot</option>
+               <option value="nyregion">NY region</option>
+               <option value="business">business</option>
+               <option value="technology">technology</option>
+               <option value="science">science</option>
+               <option value="health">health</option>
+               <option value="sports">sports</option>
+               <option value="arts">arts</option>
+               <option value="books">books</option>
+               <option value="movies">movies</option>
+               <option value="theater">theater</option>
+               <option value="sundayreview">sunday review</option>
+               <option value="fashion">fashion</option>
+               <option value="tmagazine">t magazine</option>
+               <option value="food">food</option>
+               <option value="travel">travel</option>
+               <option value="magazine">magazine</option>
+               <option value="realestate">real estate</option>
+               <option value="automobiles">automobiles</option>
+               <option value="insider">insider</option>
+              </select>
+            </div>
       </div>
      </header>
 
      <div id="clone" class="flex">
-       <div class="article-wrap flex flex-col">
-         <a class="flex font-body"><p class="padding-20"></p></a>
+       <div class="article-wrap flex flex-align-end article-width-tablet article-width-desktop article-height-mobile article-height-tablet article-height-desktop">
+         <a class="flex"><p class="padding-20 flex text-align-justify"></p></a>
        </div>
      </div>
-     <section id="articlesSection">
+     <section id="articlesSection" class="flex flex-col-mobile flex-wrap-tablet flex-wrap-tablet">
     </section>
 </body>
-<footer> <p class="font-body text-transform text-align-center font-grey">copyright 2016 instanews</p></footer>
+<footer class="flex flex-just-center flex-just-start-desktop padding-30">
+    <p class="flex">&copy; Copyright 2016 INSTANEWS</p>
+</footer>
 </html>
