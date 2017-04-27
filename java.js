@@ -9,11 +9,9 @@ $(document).ready(function(){
   $('#category').on('change', function(){
 
             $(".load").fadeIn(1000);
-
             $("header").addClass( "header-small");
-
-             selectedCategory = $(this).val();
-             var catUrl = url + selectedCategory +".json"+'?' + $.param({'api-key': "441eb2940b574368a76954b91c4fa337"});
+            selectedCategory = $(this).val();
+            var catUrl = url + selectedCategory +".json"+'?' + $.param({'api-key': "441eb2940b574368a76954b91c4fa337"});
 
             $.ajax({
               url: catUrl,

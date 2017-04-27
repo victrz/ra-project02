@@ -1,6 +1,6 @@
 $font-footer-color: #c2c2c2;
 $font-body-color: white;
-$font-header-color:white;
+$font-header-color: white;
 $font-body: "OpenSans-Light";
 $background-color: black;
 
@@ -12,29 +12,12 @@ $background-color: black;
 body{
   background-color: $background-color;
 }
-// @font-face {
-//     font-family: "OpenSans-Bold";
-//     src: url("..fonts/OpenSans-Bold.ttf") format("truetype");
-//     font-weight: bold;
-// }
-// @font-face {
-//     font-family: "OpenSans-BoldItalic";
-//     src: url("..fonts/OpenSans-BoldItalic.ttf") format("truetype");
-//     font-weight: bold;
-//     font-style: italic;
-// }
+
 @font-face {
     font-family: "OpenSans-Light";
     src: url("../fonts/OpenSans-Light.ttf") format("truetype");
     font-weight: lighter;
   }
-// @font-face {
-//     font-family: "OpenSans-LightItalic";
-//     src: url("..fonts/OpenSans-LightItalic.ttf") format("truetype");
-//     font-weight: lighter;
-//     font-style: italic;
-// }
-
 
 .flex{
   display: flex;
@@ -45,39 +28,20 @@ body{
 .flex-just-center{
   justify-content: center;
 }
-.flex-just-between{
-  justify-content: space-between;
-}
-.flex-just-around{
-  justify-content: space-around;
-}
-.flex-align-center{
-  align-content: center;
-}
-.flex-align-self-end{
-  align-self: flex-end;
-}
 .flex-align-end{
   align-items: flex-end;
-}
-.flex-grow{
-  flex-grow:1;
 }
 .text-align-center{
   text-align: center;
 }
 
 .article-wrap{
+  height: 60vh;
     p{
       color: $font-body-color;
       font-family: $font-body;
       font-size: 1.1em;
       background-color: rgba(0, 0, 0, 0.6);
-      width: 100%;
-      //height: auto;
-      //background-size: cover;
-      // background-position: center;
-      //line-height: 2em;
     }
     a{
       text-decoration: none;
@@ -118,7 +82,6 @@ footer{
         font-family: $font-body;
         font-size: 1.8em;
         color: $font-footer-color;
-        // margin: auto;
       }
 }
 .padding-20{
@@ -150,24 +113,11 @@ footer{
 }
 
 @media only screen and (max-device-width: 600px){
-  .flex-col-mobile{
-    flex-direction: column;
-  }
-  .text-align-center-mobile{
-    text-align: center;
-  }
-  .article-height-mobile{
-    height: 60vh;
-  }
-  .article-width-mobile{
-    width: 100%;
-  }
-
 
 }
 
 @media only screen and (min-device-width: 600px){
-  .flex-row-tablet{
+  .flex-tablet{
     flex-direction: row;
   }
   .flex-just-start-tablet{
@@ -192,10 +142,13 @@ footer{
   .article-bg-size-tablet{
     background-size: 25%;
   }
+  .text-align-left-tablet{
+    text-align: left;
+  }
 }
 
 @media only screen and (min-device-width: 1240px){
-  .flex-row-desktop{
+  .flex-desktop{
     flex-direction: row;
   }
   .flex-just-start-desktop{
@@ -204,7 +157,7 @@ footer{
   .flex-just-center-desktop{
     justify-content: flex-start;
   }
-  .flex-grow{
+  .flex-grow-desktop{
     flex-grow: 1;
   }
   .flex-just-center-desktop{
@@ -221,5 +174,8 @@ footer{
   }
   .article-bg-size-desktop{
     background-size: 20%;
+  }
+  .text-align-left-tablet{
+    text-align: left;
   }
 }
