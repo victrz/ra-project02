@@ -139,22 +139,19 @@ footer{
   .article-height-tablet{
     height: 40vh;
   }
-  .article-bg-size-tablet{
-    background-size: 25%;
-  }
+  // .article-bg-size-tablet{
+  //   background-size: 25%;
+  // }
   .text-align-left-tablet{
     text-align: left;
   }
 }
 
-@media only screen and (min-device-width: 1240px){
+@media only screen and (min-device-width: 1000px){
   .flex-desktop{
     flex-direction: row;
   }
   .flex-just-start-desktop{
-    justify-content: flex-start;
-  }
-  .flex-just-center-desktop{
     justify-content: flex-start;
   }
   .flex-grow-desktop{
@@ -172,9 +169,7 @@ footer{
   .article-height-desktop{
     height: 50vh;
   }
-  .article-bg-size-desktop{
-    background-size: 20%;
-  }
+
   .text-align-left-tablet{
     text-align: left;
   }

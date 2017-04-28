@@ -1,5 +1,6 @@
 # ra-project02
 NY Times stories
+Fetch up to 12 stories from the NYTimes API for a selected news section
 
 
 monday, april 25 2017
@@ -21,3 +22,8 @@ wednesday, april 27 2017
 -created .SCSS, min.style.css
 -created loading animation
 -need to style with SASS, @media queries
+
+thursday, april 28 2017
+-flexed articles grid
+-styling complete
+-further work: animate transitions, use custom drop down menu
