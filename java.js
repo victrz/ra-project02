@@ -3,32 +3,35 @@ var selectedCategory;
 var url="https://api.nytimes.com/svc/topstories/v2/";
 var x=0;
 
-$(document).ready(function(){
+// $(document).ready(function(){
+
+  $(window).on("load", function() {
+  $("#category").heapbox({"onChange":function(value){
+
+              // $("header").animate({height: $('header')[0].scrollHeight},1600,"linear", function(){$('header').height('auto');});
+               $("header").addClass( "header-small");
 
 
-  $('#category').on('change', function(){
+              var catUrl = url + value +".json"+'?' + $.param({'api-key': "441eb2940b574368a76954b91c4fa337"});
 
-            $(".load").fadeIn(1000);
-            $("header").addClass( "header-small");
-            selectedCategory = $(this).val();
-            var catUrl = url + selectedCategory +".json"+'?' + $.param({'api-key': "441eb2940b574368a76954b91c4fa337"});
-
-            $.ajax({
-              url: catUrl,
-              method: 'GET',
-            })
-            .done(function(result) {
-              $("#articlesSection").empty();
-              loop_articles(result.results);
-              console.log(result);
-              $(".load").fadeOut(1000);
-            }).fail(function(err) {
-              throw err;
-            });
-
-  });
-
+              $.ajax({
+                url: catUrl,
+                method: 'GET',
+              })
+              .done(function(result) {
+                $(".load").fadeIn();
+                $("#articlesSection").empty();
+                window.setTimeout(function(){
+                  loop_articles(result.results);
+                    }, 600);
+                $(".load").fadeOut(1000);
+              }).fail(function(err) {
+                throw err;
+              });
+  }});
 });
+
+
 function newArticle(abstract, image, link){
           var articleClone = $("#clone").clone();
           $(articleClone).children(".article-wrap").css({"background": "url('"+image+"')", "background-size": "cover", "background-position": "center"});
@@ -37,6 +40,9 @@ function newArticle(abstract, image, link){
           $("#articlesSection").append($(articleClone).html());
 }
 function loop_articles(results){
+  if(results.length == 0){
+    $('#articlesSection').html("This news section has no articles");
+  };
 
   x=0;
   for (var i=0; i < results.length; i++){

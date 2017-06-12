@@ -10,9 +10,15 @@ $background-color: black;
   margin: 0;
 }
 body{
-  background-color: $background-color;
+  background: $background-color;
 }
 
+.header-large{
+  height:80vh;
+}
+ .header-small{
+    height: auto;
+  }
 @font-face {
     font-family: "OpenSans-Light";
     src: url("../fonts/OpenSans-Light.ttf") format("truetype");
@@ -34,14 +40,19 @@ body{
 .text-align-center{
   text-align: center;
 }
+.article-wrap:hover :nth-child(1){
+  display: block;
+}
 
 .article-wrap{
   height: 60vh;
+
     p{
+      display: none;
       color: $font-body-color;
       font-family: $font-body;
       font-size: 1.1em;
-      background-color: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.6);
     }
     a{
       text-decoration: none;
@@ -52,31 +63,34 @@ body{
 .load{
   position: fixed;
   z-index: 2000;
-  background-image: url("../ajax-loader.gif");
-  background-size: 20%;
-  background-position: center center;
-  background-repeat: no-repeat no-repeat;
+  background: rgba(52,44,44,0.8) url("../ajax-loader.gif") no-repeat center;
   width: 100%;
   height: 100%;
-  background-color: rgba(52,44,44,0.8);
   display: none;
 }
 header{
-  background-color: $background-color;
+  height: 90vh;
+  background: $background-color;
+  transition: all 1s;
+  -webkit-transition-timing-function: ease-in-out; /* Safari and Chrome */
+  transition-timing-function: ease-in-out;
     p{
       font-family: $font-body;
       color: $font-header-color;
     }
 }
-.header-large{
-  height:80vh;
-  justify-content: center;
-}
-.header-small{
-  height: auto;
-}
+// header .active{
+//   height: auto;
+// }
+// .header-large{
+//   height:80vh;
+//   justify-content: center;
+// }
+// .header-small{
+//   height: auto;
+// }
 footer{
-    background-color: $background-color;
+    background: $background-color;
     height: 20vh;
       p{
         font-family: $font-body;
@@ -92,12 +106,12 @@ footer{
 }
 #clone{
   display: none;
-  background-color: $background-color;
+  background: $background-color;
     p{
       color: $font-body-color;
       font-family: $font-body;
       font-size: 2em;
-      background-color: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.6);
       width: 100%;
       height: auto;
       line-height: 2em;
@@ -109,7 +123,7 @@ footer{
     }
 }
 #articleSection{
-  background-color: $background-color;
+  background: $background-color;
 }
 
 @media only screen and (max-device-width: 600px){
