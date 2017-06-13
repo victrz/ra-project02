@@ -7,24 +7,20 @@ var x=0;
 
   $(window).on("load", function() {
   $("#category").heapbox({"onChange":function(value){
-
-              // $("header").animate({height: $('header')[0].scrollHeight},1600,"linear", function(){$('header').height('auto');});
-               $("header").addClass( "header-small");
-
-
-              var catUrl = url + value +".json"+'?' + $.param({'api-key': "441eb2940b574368a76954b91c4fa337"});
+    $(".load").fadeIn(1000);
+    $("#articlesSection").fadeOut(2000).empty();
+    $("header").switchClass( "header-large", "header-small", 2000, "linear" );
+    var catUrl = url + value +".json"+'?' + $.param({'api-key': "441eb2940b574368a76954b91c4fa337"});
 
               $.ajax({
                 url: catUrl,
                 method: 'GET',
               })
               .done(function(result) {
-                $(".load").fadeIn();
-                $("#articlesSection").empty();
-                window.setTimeout(function(){
+
+                // window.setTimeout(function(){
                   loop_articles(result.results);
-                    }, 600);
-                $(".load").fadeOut(1000);
+                    // }, 600);
               }).fail(function(err) {
                 throw err;
               });
@@ -37,7 +33,8 @@ function newArticle(abstract, image, link){
           $(articleClone).children(".article-wrap").css({"background": "url('"+image+"')", "background-size": "cover", "background-position": "center"});
           $(articleClone).find("p").text(abstract);
           $(articleClone).find("a").attr("href", link);
-          $("#articlesSection").append($(articleClone).html());
+          $("#articlesSection").append($(articleClone).html()).fadeIn(1000, function(){$(".load").fadeOut(1000);
+});
 }
 function loop_articles(results){
   if(results.length == 0){
